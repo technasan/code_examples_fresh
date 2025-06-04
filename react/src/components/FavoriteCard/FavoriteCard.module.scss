@@ -1,0 +1,121 @@
+.favoriteCardRoot {
+  position: relative !important;
+  overflow: hidden;
+  all: unset;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  align-content: center;
+  padding: 12px 0;
+  max-width: 390px;
+  border-bottom: 1px solid var(--Native-Stroke);
+  cursor: pointer;
+  background: var(--Native-White);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex: 1;
+  transition: 0.2s;
+  opacity: 1;
+}
+
+.info.hidden {
+  opacity: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.description {
+  font-size: 13px;
+  color: var(--Native-Silver-Grey);
+  line-height: 16px;
+}
+
+.count {
+  color: var(--Color-Blue);
+}
+
+.button {
+  width: 62px;
+  border-radius: 20px;
+  background: var(--Color-Blue);
+  color: var(--Color-White);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.removeCard {
+  position: absolute;
+  left: calc(100vw - 108px);
+  top: 0;
+  transition: 0.2s;
+  transform: translateX(0);
+  display: flex;
+  height: 88px;
+  align-items: center;
+}
+
+.open {
+  transform: translateX(-180px);
+}
+
+.play {
+  background: var(--Native-White);
+  width: 92px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  background-color: var(--Color-Green);
+  width: 90px;
+  height: 88px;
+}
+
+.remove {
+  background-color: var(--Color-Red);
+  width: 90px;
+  height: 88px;
+}
+
+.favControlBtn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.favControlBtn > span {
+  color: var(--Color-White);
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+}
+
+.favControlBtn > img {
+  height: 24px;
+}
