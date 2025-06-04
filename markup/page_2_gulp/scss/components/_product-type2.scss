@@ -1,0 +1,22 @@
+// добавлены классы, которыми type2 отличается от type1
+.product-name-only {
+  position: relative;
+  width: 308px;
+  height: 308px;
+  border: 1px solid var(--main-bronze);
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 131px;
+  font-size: 42px;
+  text-transform: uppercase;
+  color: var(--main-bronze);
+  background-color: var(--main-beige);
+  z-index: 10;
+
+}
+
+// .product-name-mobile {
+//   text-align: center;
+//   margin: 24px;
+//   padding-top: 32px;
+// }

@@ -1,0 +1,331 @@
+.startups section {
+  padding: 25px 55px 160px 55px;
+  @include mobile {
+    padding: 25px 24px 160px 24px;
+  }
+}
+
+section.back-black {
+  position: absolute;
+  background-color: transparent; // var(--color-black);
+  padding: 16px 55px 10px 55px;
+  z-index: 10;
+  @include mobile {
+    padding: 32px 24px 10px 24px;
+  }
+}
+
+.st-head {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  color: var(--main-white);
+  background-color: var(--color-black);
+  height: 100vh;
+  padding-top: var(--header-height);
+
+  h1 {
+    color: var(--main-bronze);
+  }
+  &__tip {
+    position: absolute;
+    width: 36em;
+    height: 36em;
+    padding: 10em 40px 0 40px;
+    border: 1px solid rgba(192, 179, 168, 0.3);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(-70%, -45%);
+    text-align: center;
+    color: var(--coffee-milk);
+    @include mobile {
+      width: 312px;
+      height: 312px;
+      padding-top: 84px;
+      border-radius: 163px;
+      top: 80px;
+      left: 24px;
+    }
+    p {
+      color: var(--coffee-milk);
+    }
+  }
+  &__action {
+    max-width: 520px;
+    width: 40%;
+    height: 200px;
+    margin-left: calc(50% - 40px - 80px);
+    margin-top: calc(33.5rem - var(--header-height));
+    position: relative;
+    @include mobile {
+      width: 232px;
+      height: 300px;
+      margin-left: 80px;
+      margin-top: 323px;
+    }
+    h1 {
+      margin-bottom: 24px;
+      margin-top: 0;
+    }
+    p {
+      margin: 0;
+      font-size: 22px;
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.st-idea {
+  color: var(--main-white);
+  background-color: var(--color-black);
+  position: relative;
+  height: 1600px;
+  @include mobile {
+    height: 1750px;
+  }
+  > h1 {
+    color: var(--main-white);
+    text-align: center;
+    margin-top: 160px;
+  }
+
+  &_1 {
+    top: 350px;
+    left: 10vw;
+  }
+  &_2 {
+    top: 660px;
+    left: 52vw;
+    @include mobile {
+      top: 780px;
+      left: -100px;
+    }
+  }
+  &_3 {
+    top: 1000px;
+    left: 20vw;
+    @include mobile {
+      top: 1200px;
+      left: 10vw;
+    }
+  }
+  &__circle {
+    position: absolute;
+    width: 421px;
+    height: 421px;
+    border: 1px solid rgba(192, 179, 168, 0.3);
+    border-radius: 340px;
+  }
+  &__item {
+    position: absolute;
+    width: 621px;
+    height: 421px;
+    h1 {
+      color: var(--main-bronze);
+      white-space: nowrap;
+    }
+  }
+  &__number {
+    width: 25px;
+    height: 164px;
+    margin: 0 24px 300px 64px;
+    font-size: 22px;
+    font-family: "IntroDemoCondLightCAPS";
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    @include mobile {
+      height: 142px;
+      margin: 0 8px 300px 44px;
+    }
+    &_2 {
+      margin: -170px 0 300px 44px;
+      @include mobile {
+        margin: 0 44px 300px 8px;
+      }
+    }
+  }
+  &__text {
+    width: 500px;
+    height: 150px;
+    padding-top: 168px;
+    @include mobile {
+      max-width: 300px;
+    }
+    h1 {
+      margin: 0;
+      @include mobile {
+        font-size: 42px;
+      }
+      // white-space: normal;
+    }
+    p {
+      font-size: 22px;
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    &_2 {
+      margin-left: 110px;
+      @include mobile {
+        max-width: 240px;
+        margin-left: 90px;
+        text-align: right;
+        float: left;
+      }
+    }
+  }
+
+  div {
+    color: var(--main-white);
+  }
+}
+
+.st-keys {
+  margin-top: 100vh;
+  background: var(--main-beige);
+  position: relative;
+  z-index: 10;
+  &__container {
+    margin-top: 160px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 160px 32px;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0;
+    }
+  }
+  &__item {
+    max-width: 430px;
+    h1 {
+      margin: 0;
+    }
+    p {
+      font-size: 22px;
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    &_1 {
+      text-align: right;
+      max-width: none;
+      @include mobile {
+        text-align: left;
+        margin-bottom: 24px;
+        order: 1;
+      }
+    }
+    &_2 {
+      @include mobile {
+        text-align: left;
+        margin-bottom: 64px;
+        order: 2;
+      }
+    }
+    &_3 {
+      @include mobile {
+        text-align: right;
+        margin-bottom: 24px;
+        order: 3;
+      }
+    }
+    &_4 {
+      text-align: right;
+      justify-self: right;
+      @include mobile {
+        text-align: right;
+        margin-bottom: 64px;
+        order: 4;
+      }
+    }
+    &_5 {
+      justify-self: right;
+      text-align: right;
+      @include mobile {
+        text-align: left;
+        justify-self: left;
+        margin-bottom: 24px;
+        order: 5;
+      }
+    }
+    &_6 {
+      @include mobile {
+        text-align: left;
+        order: 6;
+      }
+    }
+  }
+
+  img {
+    width: 81px;
+  }
+  &__btn {
+    display: block;
+    margin: 120px auto 32px auto;
+    width: 329px;
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.st-form {
+  background: var(--main-beige);
+  position: relative;
+  z-index: 10;
+  &__container {
+    margin-top: 140px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 160px 64px;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0;
+    }
+  }
+
+  &__item {
+    border-top: 1px solid rgba(192, 179, 168, .3);
+    padding: 24px 0;
+    @include mobile {
+      margin: 0;
+    }
+    h1 {
+      margin: 0;
+      color: var(--main-bronze);
+    }
+    p {
+      font-size: 22px;
+
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    &_1 {
+      text-align: right;
+    }
+    &_2 {
+      position: relative;
+      &:before, &:after {
+        content: "";
+        display: block;
+        height: 250px;
+        width: 1px;
+        opacity: .3;
+        background: var(--coffee-milk);
+        position: absolute;
+        top: 38px;
+      }
+      &:before {
+        left: -32px;
+      }
+      &:after {
+        right: -32px;
+      }
+    }
+  }
+}

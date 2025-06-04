@@ -1,0 +1,225 @@
+// $sticky-offset: 260px; // re-defined in _vars.scss
+.creating {
+  @include desktop {
+    &__title {
+      position: sticky;
+      top: 0;
+      z-index: 9;
+      background: var(--main-beige);
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -66px;
+        left: 0;
+        right: 0;
+        height: 66px;
+        background-color: var(--main-beige);
+      }
+    }
+  }
+
+  &__container {
+    margin: 40px auto 100px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 115px;
+    max-width: 1090px;
+
+    @include mobile {
+      margin: 40px 24px 60px 24px;
+      grid-template-columns: 100%;
+      gap: 20px;
+      min-width: 300px;
+    }
+  }
+
+  &__creating {
+    max-width: 422px;
+    @include desktop {
+      padding-bottom: 384px;
+    }
+  }
+
+  &__item {
+    height: 220px;
+    background: var(--main-beige);
+    border-top: 1px solid rgba(192, 179, 168, 0.3);
+    padding: 24px 16px;
+    img {
+      margin-bottom: 16px;
+    }
+    h2 {
+      color: var(--dark-bronze);
+      margin: 0 0 4px;
+    }
+    p {
+      margin: 0;
+    }
+    @include desktop {
+      --header-height: 240px;
+      position: sticky;
+      top: var(--sticky-offset);
+      @include folding-blocks(3);
+    }
+  }
+
+  &__form {
+    position: sticky;
+    top: var(--sticky-offset);
+    background-color: var(--main-white);
+    max-width: 486px;
+    align-self: start;
+    .container {
+      padding: 32px 32px 56px;
+      border-top: 1px solid rgba(163, 120, 78);
+      @include mobile {
+        padding: 32px 16px 40px;
+      }
+      h3 {
+        margin-top: 0;
+        font-size: 29px;
+        line-height: 36px;
+        margin-bottom: 32px;
+      }
+      input::placeholder {
+        color: var(--medium-gray);
+      }
+      input[type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+        + label {
+          display: flex;
+          cursor: pointer;
+          font-size: 14px;
+          line-height: 1.225;
+
+          span {
+            display: block;
+
+            &.icon {
+              width: 22px;
+              min-width: 22px;
+              height: 22px;
+              margin: 0 16px 0 0;
+              border: 1px solid #B8B8B8;
+              border-radius: 1px;
+              padding: 1px;
+              transition: .3s ease;
+              img {
+                opacity: 0;
+                transition: .3s ease;
+              }
+            }
+          }
+
+          &:hover, &:focus {
+            span.icon {
+              border-color: var(--main-bronze);
+            }
+          }
+        }
+        &:checked {
+          + label {
+            span.icon {
+              background: var(--main-bronze);
+              border-color: var(--main-bronze);
+              img {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      a {
+        color: var(--main-black);
+        text-decoration-line: underline;
+        transition: .3s ease;
+        &:hover {
+          color: var(--main-bronze);
+        }
+      }
+      .form__btn {
+        margin-top: 32px;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+// ниже - из merge conflicts
+.contacts__form-cp {
+  @include desktop {
+    position: sticky;
+    top: var(--sticky-offset);
+    align-self: start;
+  }
+}
+/*
+$sticky-offset: 260px;
+
+.creating {
+  @include desktop {
+    &__title {
+      position: sticky;
+      top: 0;
+      z-index: 9;
+      background: var(--main-beige);
+    }
+  }
+
+  &__container {
+    position: relative;
+    margin: 40px 55px 100px 55px;
+    margin-top: 40px;
+    grid-template-columns: calc(60% - 115px) 40%;
+    gap: 0 115px;
+    max-width: 1090px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobile {
+      margin: 40px 24px 60px 24px;
+      grid-template-columns: 100%;
+      gap: 20px;
+      min-width: 300px;
+    }
+  }
+
+  &__creating {
+    max-width: 422px;
+    @include desktop {
+      padding-bottom: 600px;
+    }
+  }
+
+  &__item {
+    height: 240px;
+    background: var(--main-beige);
+    border-top: 1px solid rgba(192, 179, 168, 0.3);
+    padding: 24px 16px;
+    img {
+      margin-bottom: 16px;
+    }
+    h2 {
+      color: var(--dark-bronze);
+      margin: 0 0 4px;
+    }
+    p {
+      margin: 0;
+    }
+    @include desktop {
+      --folded-height: 240px;
+      position: sticky;
+      top: $sticky-offset;
+      @include folding-blocks(3);
+    }
+  }
+}
+
+.contacts__form-cp {
+  @include desktop {
+    position: sticky;
+    top: $sticky-offset;
+    align-self: start;
+  }
+}
+*/

@@ -1,0 +1,64 @@
+.cookie-alert {
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  bottom: 10%;
+  left: 55px;
+  z-index: 1000;
+  transition: 0.6s;
+  @include mobile {
+    width: 100%;
+    left: 0;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.cookie-alert > div {
+  width: 248px;
+  height: 248px;
+  border-radius: 50%;
+  border-radius: 400px;
+  border: 1px solid rgba(192, 179, 168, 0.4);
+  background: rgba(250, 245, 240, 0.75);
+  backdrop-filter: blur(5px);
+  padding: 40px;
+  @include mobile {
+    height: fit-content;
+    padding: 16px;
+    border-radius: 0;
+    width: 100%;
+    max-width: 500px;
+    min-width: 270px;
+    margin: 0 20px 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.cookie-alert > div p {
+  text-align: center;
+  font-size: 16px;
+  @include mobile {
+    text-align: left;
+    line-height: 19px;
+    margin: 0;
+    width: calc(100% - 120px);
+  }
+}
+
+.cookie-alert > div button {
+  width: 100px;
+  height: 49px;
+  @include mobile {
+    margin-left: 14px;
+  }
+}
+
+.cookie-alert * a {
+  color: var(--main-black);
+  font-weight: 600;
+  text-decoration: underline;
+}

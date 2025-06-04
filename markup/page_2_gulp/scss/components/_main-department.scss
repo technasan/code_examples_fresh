@@ -1,0 +1,151 @@
+.department {
+  background-color: var(--main-beige);
+  padding: 0 55px;
+  display: block;
+  padding-top: 150px;
+  padding-bottom: 300px;
+  min-height: 950px;
+  position: relative;
+  z-index: 10;
+  @include mobile {
+    padding: 40px 24px 80px 24px;
+    min-height: 480px;
+  }
+  h1 {
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 46px; /* 109.524% */
+    @include mobile {
+      font-size: 29px;
+      line-height: 36px;
+    }
+  }
+
+  .head-h0 {
+    font-size: 42px;
+    line-height: 46px;
+    @include mobile {
+      font-size: 42px;
+      line-height: 46px;
+    }
+  }
+}
+
+.department .container {
+  z-index: 5;
+}
+
+.dep-container {
+  position: relative;
+
+  z-index: 0;
+}
+
+.dep-card {
+  position: absolute;
+  padding: 80px 80px 77px 112px;
+  top: 0;
+  left: 0;
+  min-height: 200px;
+  max-height: 420px;
+  width: 60%;
+  z-index: 10;
+  background-color: var(--color-black);
+  background-image: url($rootpath + "img/line-cmilk-card-vert.png");
+  background-repeat: no-repeat;
+  background-position: 80px 112px;
+  background-size: 1px calc(100% - 172px);
+
+  @include mobile {
+    position: relative;
+    padding: 32px 44px 24px 64px;
+    width: 100%;
+    background-position: 32px 62px;
+    background-size: 1px calc(100% - 100px);
+  }
+
+  &__line {
+    border-top: 1px solid #554f4b; //var(--coffee-milk);
+  }
+  &_back {
+    position: absolute;
+    top: 140px;
+    left: 40%;
+
+    width: 55%;
+    height: 480px;
+
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bronze);
+    background-image: url($rootpath + "img/pic-main-b.png");
+    background-repeat: no-repeat;
+    background-position: right 75px bottom;
+    background-size: 293px 406px;
+    z-index: 5;
+    overflow: hidden;
+    @include mobile {
+      position: relative;
+      top: 0;
+      left: calc(100% - 300px);
+      background-size: 50%;
+      background-position: right 35px bottom;
+      margin-right: 24px;
+      height: 230px;
+      width: 300px;
+    }
+  }
+
+  &__pic {
+    height: 300px;
+    // position: absolute;
+    bottom: 0;
+    margin: 0;
+    vertical-align: bottom;
+    @include mobile {
+      height: 200px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    color: var(--main-white);
+    font-size: 14px;
+    line-height: 17px;
+    display: block;
+    margin-bottom: 24px;
+    @include mobile {
+      // font-size: 14px;
+      // line-height: 17px;
+    }
+    @include hover {
+    }
+    img {
+      margin-left: 15px;
+      margin-bottom: 0;
+      @include mobile {
+        margin-bottom: -3px;
+      }
+    }
+  }
+}
+.dep-card h1 {
+  color: var(--main-white);
+  margin-top: 60px;
+  @include mobile {
+    margin-top: 24px;
+  }
+}
+
+.dep-card p {
+  color: var(--main-white);
+  font-size: 18px;
+  line-height: 24px;
+  @include mobile {
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 12px;
+    width: 70%;
+  }
+}

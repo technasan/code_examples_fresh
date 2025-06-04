@@ -1,0 +1,51 @@
+.prodmenu {
+  width: 308px;
+  gap: 1px;
+  @include mobile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    padding: 26px;
+    height: 74px;
+    display: block;
+    width: 100%;
+    color: var(--main-bronze);
+    background-color: var(--main-beige);
+    border-bottom: 1px solid rgba(192, 179, 168, 0.3);
+    border-top: 1px solid transparent;
+    text-transform: uppercase;
+    transition: 0.3s;
+
+    &:hover {
+      border-top: 1px solid rgba(192, 179, 168, 1);
+      color: var(--main-white);
+      background-color: var(--main-bronze);
+    }
+
+    &:active {
+      color: var(--main-white);
+      background-color: var(--main-bronze);
+      border-bottom: 1px solid var(--main-bronze);
+    }
+  }
+
+  .active {
+    color: var(--main-white);
+    background-color: var(--main-bronze);
+  }
+}

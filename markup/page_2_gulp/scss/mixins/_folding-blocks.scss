@@ -1,0 +1,14 @@
+@mixin folding-blocks($count) {
+  @at-root :root {
+    --scroll-offset: 0px;
+  }
+
+  @for $i from 1 through $count {
+    &-#{$i} {
+      transform: translateY(calc(var(--folded-height) * ($i - 1) + var(--title-height) + var(--scroll-offset)));
+      @include mobile {
+        transform: translateY(calc(var(--folded-height) * ($i - 1) + var(--title-height) + var(--scroll-offset) - 12px));
+      }
+    }
+  }
+}

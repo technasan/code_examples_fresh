@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container" id="site-container">
+      @include('partials/header.html')
+
+      <div class="filter mobile" id="filters-menu-mobile" onscroll="this.stopPropagation()">
+        <div class="filter__head flex mobile">
+          <div class="">Фильтры</div>
+          <button
+            class="btn-reset icon-close"
+            aria-label="Закрыть фильтры"
+            onclick="document.getElementById('filters-menu-mobile').classList.toggle('active');"></button>
+        </div>
+        <div class="filter__mobcontent mobile">
+          <a href="#" class="clearall" data-filter-function="clearall"><span>СБРОСИТЬ ВСЕ</span></a>
+          @include('partials/catalog_filters.html')
+        </div>
+      </div>
+      <main class="catalog">
+        @include('partials/buffer_top.html') @include('partials/arrowback.html')
+        <section class="mobile">
+          <div class="container icon-filter">
+            <span class="icon-filter"
+              ><img
+                src="img/svg/icon-filter-outline.svg"
+                onclick="document.getElementById('filters-menu-mobile').classList.toggle('active');"
+            /></span>
+          </div>
+        </section>
+        <section class="catalog">
+          <div class="container catalog__container grid">
+            <div class="catalog__left filter desktop">@include('partials/catalog_filters.html')</div>
+            <div class="catalog__content">@include('partials/catalog_content.html')</div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
+        <section class="scrollup">
+          <div><img src="img/scroll-to-top.png" onclick="window.scrollTo(0, 0);" /></div>
+        </section>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

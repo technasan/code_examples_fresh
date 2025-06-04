@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container" id="site-container">
+      @include('partials/header.html')
+      <main class="brands-horeca">
+        @include('partials/arrowback.html')
+        <section class="brands">
+          <div class="container brands__container grid">
+            <div class="brands__left">
+              <!--  @include('partials/brands_left_menu.html') -->
+              <ul class="list-reset prodmenu">
+                <li><a class="prodmenu__link" href="brands-sk-selective.html">бренды</a></li>
+                <li><a class="prodmenu__link" href="brands-kids.html">детское питание</a></li>
+                <li><a class="prodmenu__link active" href="brands-horeca.html">horeca</a></li>
+                <li><a class="prodmenu__link" href="brands-ctm.html">ctm</a></li>
+              </ul>
+            </div>
+            <div class="brands__content">@include('partials/brands_prod_horeca.html')</div>
+            <a id="details"></a>
+          </div>
+        </section>
+      </main>
+
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

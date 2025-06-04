@@ -1,0 +1,205 @@
+main.catalog {
+  background-color: var(--main-white);
+  margin-top: var(--header-height);
+}
+
+span.icon-filter {
+  cursor: pointer;
+}
+
+div.icon-filter {
+  text-align: right;
+  margin: 0 24px;
+}
+
+section.buffer {
+  height: var(--header-height);
+}
+
+section.catalog {
+  padding-bottom: 40px;
+}
+section.scrollup {
+  margin: 0;
+  padding: 60px 55px 32px 55px;
+  @include mobile {
+    padding: 40px 24px 32px 24px;
+  }
+}
+
+section.scrollup > div > img {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 32px;
+  height: 32px;
+}
+.catalog {
+  &__container {
+    margin: 60px 55px 0 55px;
+    grid-template-columns: 280px calc(100% - 344px);
+    gap: 0 64px;
+    min-width: 1000px;
+    @include mobile {
+      margin: 24px;
+      grid-template-columns: 100% 1fr;
+      gap: 0;
+      min-width: 300px;
+    }
+  }
+  &__left {
+    // background-color:aquamarine;
+  }
+  &__content {
+    .goods {
+      grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
+      gap: 32px 16px;
+      @media (max-width: 768px) {
+        // grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: calc(50% - 8px) calc(50% - 8px);
+      }
+    }
+    .goods-more {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 16px;
+      @include mobile {
+        grid-template-columns: 100% 1fr;
+      }
+    }
+  }
+}
+
+.goods {
+  &__item {
+    width: 100%;
+    max-height: 484px;
+    min-height: 200px;
+    @include mobile {
+      width: 100%;
+      max-height: none;
+    }
+
+    &:hover .goods__pic {
+      background-color: #f2f0ee;
+      cursor: pointer;
+      transition: 0.4s;
+      img {
+        transform: scale(0.9);
+      }
+    }
+
+    &-btnmore {
+      min-height: 80px;
+      height: 120px;
+      @include mobile {
+        height: 80px;
+      }
+
+      button {
+        margin-top: 85px;
+        @include mobile {
+          margin-top: 45px;
+        }
+      }
+    }
+  }
+  &__pic {
+    width: 100%;
+    text-align: center;
+    padding: 24px 10px 32px 10px;
+    background-color: var(--bg-goods);
+    transition: 0.4s ease-in-out;
+    @include mobile {
+      padding: 14px;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      img{
+        aspect-ratio: 16/16;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    img {
+      transform: scale(1);
+      transition: 0.4s;
+    }
+  }
+  &__tags {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    gap: 0;
+    span {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    @include mobile {
+      flex-direction: column;
+      margin-top: 0;
+    }
+  }
+  &__genre {
+    background-color: var(--color-black);
+    color: var(--main-white);
+    margin-right: 4px;
+    @include mobile {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  &__tag {
+    background-color: var(--main-beige);
+    flex-wrap: wrap;
+    @include mobile {
+      display: inline-flex;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+    }
+    .vert {
+      color: var(--coffee-milk);
+      font-size: 14px;
+      padding: 0.5px 6px;
+    }
+  }
+  &__type {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &__title {
+    font-family: "IntroDemoCondLightCAPS";
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -webkit-hyphenate-character: auto; // "\2010";
+    -webkit-hyphenate-limit-after: 2;
+    -webkit-hyphenate-limit-before: 2;
+    -moz-hyphens: auto;
+    a {
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--main-black);
+      font-family: "IntroDemoCondLightCAPS";
+    }
+    @include mobile {
+      max-height: 60px;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // количество строк
+      -webkit-box-orient: vertical;
+    }
+  }
+}

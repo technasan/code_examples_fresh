@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container" id="site-container">
+      @include('partials/header.html')
+      <main class="contacts">
+        @include('partials/buffer_top.html') @include('partials/arrowback.html')
+        <h1 class="heading">контакты</h1>
+        <div class="container contacts__container grid">
+          <section class="contacts__contacts">
+            <div class="contact flex">
+              <h3>Производственная площадка</h3>
+              <p>
+                РФ, 141140, МО, г. Лосино-Петровский, рабочий поселок Свердловский, ул. Центральная 1к1<br />
+                <span class="phone">+7 (495) 933-80-71</span> <span class="time">10:00-19:00 (MSK)</span>
+              </p>
+            </div>
+            <div class="contact flex">
+              <h3>Центральный офис</h3>
+              <p>
+                РФ, 109004, г. Москва, ул. Александра Солженицына, 17с1
+                <span class="phone">+7 (495) 726-55-38</span>
+                <span class="time">10:00-19:00 (MSK)</span>
+                <a href="mailto:info@shmpk.ru" class="email">info@shmpk.ru</a>
+              </p>
+            </div>
+            <div class="contact flex">
+              <h3>Есть вопросы по качеству продукции?</h3>
+              <p>
+                <span class="phone" style="margin-top: 0">8-800-250-18-80</span>
+                <span class="time">круглосуточно, звонок по РФ бесплатный</span>
+                <a href="mailto:shmpk-kachestvo@shmpk.ru" class="email">shmpk-kachestvo@shmpk.ru</a>
+              </p>
+            </div>
+          </section>
+          <section class="contacts__form">@include('partials/contacts_form.html')</section>
+        </div>
+
+        <section class="map">@include('partials/contacts_map.html')</section>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+//3D пачка на главной
+
+.sticky-wrapper {
+  //height: 3000px; // .highlights height - 1647px / + 500
+  overflow: visible;
+  position: relative;
+  z-index: 50;
+  //background-color: gray;
+  background-color: var(--color-black);
+  box-shadow: 0px -35px 40px 0px rgba(13, 13, 13, 0.97);
+  // border: 1px dashed greenyellow;
+  @include mobile {
+    //height: 2800px;
+  }
+}
+.sticky {
+  top: 88px;
+  height: 750px;
+  position: sticky;
+  position: -webkit-sticky;
+  // border: 1px dashed orange;
+  @include mobile {
+    height: 550px;
+  }
+}
+.pachka {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  justify-content: space-between;
+  overflow: visible;
+}
+.bg-beige {
+  background-color: var(--main-beige);
+}
+
+#pachka-box {
+  width: 750px;
+  height: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url($rootpath + "/img/sprites/doi_sprite_1000.png");
+  background-repeat: repeat-x;
+  background-size: 27000px 750px;
+  // animation: pachka steps(35);
+  // animation-timeline: scroll();
+  @include mobile {
+    transform-origin: top center;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes pachka {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    //background-position: -17500px;
+    background-position: -35000px 0px;
+  }
+}

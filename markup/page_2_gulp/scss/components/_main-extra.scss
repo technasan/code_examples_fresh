@@ -1,0 +1,40 @@
+.extra {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 600px;
+  z-index: 10;
+
+  @include mobile {
+    height: 300px;
+    //background-size: 200%;
+    background-position: center;
+  }
+}
+
+.extra-bg {
+  display: none;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-position: top center;
+  top: 0;
+  left: 0;
+  background-image: url($rootpath + "img/hands-making-bread.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+//transform: translateZ(-10px) scale(2.5);
+
+.indicator {
+  position: absolute;
+  z-index: 100;
+  width: 40px;
+  height: 20px;
+  top: 150px;
+  right: 40px;
+  // background-color: yellowgreen;
+}

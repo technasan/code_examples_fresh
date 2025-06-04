@@ -1,0 +1,114 @@
+.highlights {
+  position: relative;
+  // background-color: var(--color-black);
+  box-shadow: 0px -35px 45px 10px rgba(13, 13, 13, 0.5);
+  background-color: rgba(13, 13, 13, 0.5);
+  color: var(--light-gray);
+  z-index: 10;
+  padding: 300px 55px 50px 55px;
+
+  @include mobile {
+    padding: 300px 24px 30px 24px;
+  }
+
+  &__cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    @include mobile {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__item-1 {
+    grid-column: 1, 1fr;
+    .hl-card {
+      text-align: right;
+      @include mobile {
+        text-align: left;
+      }
+    }
+    div {
+      background-position: 100% 0%;
+      @include mobile {
+        background-position: 0% 0%;
+      }
+    }
+  }
+  &__item-2 {
+    grid-column: 3;
+    grid-row: 2;
+    @include mobile {
+      grid-column: 1;
+      grid-row: auto;
+    }
+    .hl-card {
+      text-align: left;
+
+      @include mobile {
+        text-align: right;
+      }
+    }
+    div {
+      background-position: 0% 0%;
+      @include mobile {
+        background-position: 100% 0%;
+      }
+    }
+  }
+
+  &__item-3 {
+    grid-column: 1;
+    grid-row: 3;
+    @include mobile {
+      grid-column: 1;
+      grid-row: auto;
+    }
+
+    .hl-card {
+      text-align: right;
+
+      @include mobile {
+        text-align: left;
+      }
+    }
+    div {
+      background-position: 100% 0%;
+      @include mobile {
+        background-position: 0% 0%;
+      }
+    }
+  }
+}
+
+.hl-card {
+  color: var(--main-white);
+
+  &__item {
+    background: url($rootpath + "img/line-bg-308.png") no-repeat;
+    padding-bottom: 68px;
+  }
+  &__item h1 {
+    color: var(--main-white) !important;
+    margin: 0;
+    padding: 0;
+    padding-top: 32px;
+  }
+  &__item p {
+    margin: 20px 0 0 0;
+    padding: 0;
+    font-size: 22px;
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__item_top {
+    background: url($rootpath + "img/line-bg-421.png") no-repeat;
+  }
+
+  &__link {
+    display: block;
+    margin: 45px 0 30px 0;
+    color: var(--main-bronze);
+  }
+}

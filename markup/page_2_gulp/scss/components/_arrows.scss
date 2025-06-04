@@ -1,0 +1,154 @@
+.arr-right-on > a {
+  vertical-align: middle;
+}
+.arr-right-on > a span {
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: var(--main-bronze);
+  // отступ fix
+  margin-inline-end: 10px;
+}
+
+.arr-right-on > a .arr svg {
+  width: 23px;
+}
+
+.arr-right-on > a:hover .arr * {
+  -webkit-transform: translate(8px, 0);
+  -ms-transform: translate(8px 0);
+  transform: translate(8px 0);
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.arr-left-on > a {
+  vertical-align: middle;
+}
+
+.arr-left-on > a span {
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: var(--main-bronze);
+}
+
+.arr-left-on > a .arr svg {
+  width: 23px;
+}
+
+.arr-left-on > a:hover .arr * {
+  -webkit-transform: translate(-8px, 0);
+  -ms-transform: translate(-8px, 0);
+  transform: translate(-8px, 0);
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+// new
+// The Arrow
+
+// Animated Arrow Button
+
+$text-arrow-space: 6px;
+$shaft-width: 1px;
+$newshaft-width: 54px;
+$shaft-thickness: 1px;
+$arrow-head-width: 16px;
+$arrow-head-thickness: $shaft-thickness;
+
+.the-arrow {
+  width: $shaft-width;
+  transition: all 0.2s;
+
+  &.-left {
+    top: 5px;
+    position: absolute;
+    > .shaft {
+      width: $shaft-width;
+      transition-delay: 0.2s;
+
+      &:before,
+      &:after {
+        width: $arrow-head-width;
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+
+      &:before {
+        transform: rotate(40deg);
+      }
+
+      &:after {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+
+  > .shaft {
+    display: block;
+    height: $shaft-thickness;
+    background-color: var(--main-bronze);
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+
+    &:before,
+    &:after {
+      background-color: var(--main-bronze);
+      // content: '';
+      display: block;
+      height: $arrow-head-thickness;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.2s;
+      transition-delay: 0;
+    }
+
+    &:before {
+      transform-origin: top right;
+    }
+
+    &:after {
+      transform-origin: bottom right;
+    }
+  }
+}
+
+.arr-left {
+  img {
+    margin-right: 24px;
+  }
+}
+.arr-right {
+  img {
+    margin-left: 24px;
+  }
+}
+
+.arr-left-on,
+.arr-right-on {
+  display: inline-flex;
+  text-align: right;
+  z-index: 10;
+}
+
+.arr-left-on svg.icon path {
+  transition: 0.2s;
+}
+
+.arr-left-on:hover svg.icon path {
+  transition: 0.3s;
+  d: path("m0.2153,14.50535l-7.42364,-6.87472m-0.1,-0.1l7.52364,-7.02528m-7.51771,7.01993l32.05181,0");
+}
+
+.arr-right-on svg.icon path {
+  transition: 0.2s;
+}
+
+.arr-right-on:hover svg.icon path {
+  transition: 0.3s;
+  d: path("m25.7154,14.47366l7.3846,-6.97472m0,0l-7.3846,-7.02528m7.41129,7.05197l-32.12669,-0.02669");
+}

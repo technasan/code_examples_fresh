@@ -1,0 +1,39 @@
+.graph-modal {
+  &__container {
+    width: 630px;
+    padding: 24px;
+    border-radius: 0;
+    padding: 48px 104px 56px;
+    @include mobile {
+      width: calc(100vw - 48px);
+      max-width: 390px;
+      margin: 24px;
+      // transform: translateY(-190%);
+    }
+  }
+  &__close {
+    top: 24px;
+    right: 24px;
+    width: 15px;
+    height: 15px;
+  }
+  &__content button {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.graph-modal.is-open {
+  @include mobile {
+    //bottom: 20vh;
+    top: auto;
+    padding-top: 200%;
+    padding-bottom: 30%;
+  }
+}
+
+.graph-modal__container#stForm2 {
+  h2{
+    margin-top: 0;
+  }
+}

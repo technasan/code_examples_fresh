@@ -1,0 +1,154 @@
+.contacts {
+  h1.heading {
+    margin: 60px 20px;
+  }
+  &__container {
+    margin: 40px 55px 20px 55px;
+    margin-top: 40px;
+
+    grid-template-columns: calc(60% - 115px) 40%;
+    gap: 0 115px;
+    max-width: 1090px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mobile {
+      margin: 40px 24px 20px 24px;
+      grid-template-columns: 100%;
+      gap: 20px;
+      min-width: 300px;
+    }
+  }
+
+  &__contacts {
+    max-width: 500px;
+    @include mobile {
+      order: 2;
+    }
+  }
+  &__form {
+    background-color: var(--main-white);
+    max-width: 500px;
+    .container {
+      padding: 32px;
+      border-top: 1px solid var(--main-bronze);
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+div.contact {
+  border-top: 1px solid var(--coffee-milk);
+  padding: 32px 24px;
+  gap: 38px;
+  align-items: top;
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+  }
+  h3 {
+    margin: 0;
+    width: 50%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  p {
+    margin: 0;
+    width: 40%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  .phone {
+    color: var(--main-bronze);
+    margin-top: 24px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .time {
+    font-size: 14px;
+    display: block;
+  }
+  .email {
+    display: block;
+    margin-top: 24px;
+  }
+}
+
+// КАРТА: КОНТЕЙНЕР
+
+.map {
+  margin: 40px 55px 160px 55px;
+  @include mobile {
+    margin: 40px 24px 104px 24px;
+  }
+
+  &__container {
+    width: 100%;
+    height: 360px;
+    background-color: #aaa;
+  }
+
+  // КАРТА: СТИЛИ КАРТЫ И БАЛУНОВ
+
+  // отключает копирайт на яндекс-картах (не рекомендуется)
+  [class*="copyrights-pane"] {
+    display: none !important;
+  }
+}
+
+[class*="balloon__close-button"] {
+  opacity: 1;
+  margin: 14px 17px 0 0;
+}
+
+[class*="balloon__content"] {
+  padding: 25px !important;
+  border-radius: 10px;
+  // margin-right: 10px;
+}
+
+[class*="balloon_layout_panel"] {
+  @include desktop {
+    max-width: 200px;
+  }
+}
+
+.baloon {
+  @include desktop {
+    max-width: 200px;
+  }
+  max-height: 400px;
+  &__header {
+    font-size: 22px;
+    line-height: normal;
+    margin: 0;
+  }
+
+  &__address {
+    @include desktop {
+      max-width: 200px;
+    }
+    line-height: normal;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  &__phone {
+    color: var(--main-bronze);
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  &__time {
+    font-size: 14px;
+    display: block;
+  }
+
+  &__email {
+    color: var(--main-bronze);
+    font-size: 18px;
+    margin-top: 0;
+  }
+}

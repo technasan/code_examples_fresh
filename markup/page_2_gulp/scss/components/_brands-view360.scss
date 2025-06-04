@@ -1,0 +1,150 @@
+.view360 {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 561px;
+  max-height: 561px;
+  background-color: #f2efec;
+
+  @include mobile {
+    height: 458px;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.14px;
+    padding-bottom: 3px;
+    min-width: 240px;
+  }
+  // содержит изображение товара
+  &__content {
+    position: relative;
+    text-align: center;
+
+    @include mobile {
+    }
+
+    div {
+      min-width: 680px;
+      text-align: center;
+      width: 100%;
+      @include mobile {
+        min-width: calc(100vw - 48px);
+        width: calc(100vw - 48px);
+      }
+    }
+
+    img {
+      width: 360px;
+      margin-top: 67px;
+      @include mobile {
+        width: 213px;
+        margin-top: 67px;
+      }
+    }
+    &_sk {
+      img {
+        width: 275px;
+        margin-top: 37px;
+
+        @include mobile {
+          width: 155px;
+          margin-top: 67px;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    padding: 16px 44px 16px 32px;
+
+    @include mobile {
+      height: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #f2efec;
+    z-index: 10;
+    top: 0;
+    visibility: hidden;
+    .container {
+      //transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .preloader-icon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+  &__icon {
+    cursor: pointer; //grabbing;
+  }
+}
+
+#view360.loading .view360__preloader {
+  visibility: visible;
+}
+
+// 3D спрайт:
+.sprite-container {
+  transform-origin: top left;
+  transform: scale(0.5); //translate(-40%, -50%);
+  margin-left: 70px; // test
+  //margin-right: auto;
+  @include mobile {
+    transform: scale(0.3); // translate(-40%, -50%);
+    width: calc(100vw - 48px);
+    margin-left: 10px;
+    height: 458px;
+  }
+}
+
+#sprite-box {
+  width: 1132px;
+  height: 1132px;
+  display: block;
+  // background-color: yellowgreen;
+  // background-image: url($rootpath + "img/sprites/kotlety_sprite.png");
+  background-image: url($rootpath + "img/brands-sk-r-pic2.png");
+  background-repeat: no-repeat;
+  animation: sprite 2.7s steps(36) infinite;
+  animation-play-state: paused;
+  @include mobile {
+  }
+}
+.sb-center {
+  background-position: center center;
+}
+
+.animated {
+  //animation-play-state: running;
+}
+
+@keyframes sprite {
+  100% {
+    background-position: -40752px;
+  }
+}

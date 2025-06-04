@@ -1,0 +1,165 @@
+.filter.active {
+  width: 100%;
+  left: 0 !important;
+}
+
+.filter {
+  background-color: var(--main-white);
+  @include mobile {
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    overflow: auto;
+    transition: 0.6s ease-in;
+  }
+
+  &__mobcontent {
+    margin: 0 24px;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+  }
+  &__head {
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    width: 100%;
+    background-color: var(--color-black);
+    color: var(--main-white);
+    padding: 10px 24px;
+  }
+  .icon-close {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 8px;
+    color: var(--dark-bronze);
+  }
+
+  &__buffer {
+    height: 32px;
+  }
+}
+
+.clearall {
+  display: block;
+  text-align: right;
+  color: var(--main-bronze);
+  margin: 16px 5px;
+  span {
+    border-bottom: 1px dashed var(--main-bronze);
+  }
+}
+
+.btn-filter {
+  border: 1px solid rgba(192, 179, 168, 0.5);
+  @include mobile {
+    width: 100%;
+    max-width: 500px;
+  }
+  &__item {
+    margin-bottom: 6px;
+    text-align: left;
+    color: var(--main-white);
+  }
+
+  &__item > .accordion {
+    cursor: pointer;
+    height: 48px;
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    padding: 12px 24px 8px 24px;
+    text-align: left;
+    color: var(--main-black);
+    background-color: transparent;
+    border: 1px solid rgba(192, 179, 168, 0.5);
+    border-radius: 50px;
+    transition: 0.4s;
+
+    @include mobile {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  &__item > .accordion.active {
+    color: var(--main-white);
+    background-color: var(--main-bronze);
+    border: 1px solid var(--main-bronze);
+  }
+
+  &__item > .accordion:hover {
+    @include desktop {
+      background-color: var(--main-bronze);
+      border: 1px solid var(--main-bronze);
+      cursor: pointer;
+      color: var(--main-white);
+    }
+  }
+
+  &__item > .accordion:hover:after {
+    @include desktop {
+      color: var(--main-white);
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='18' viewBox='0 0 20 18' fill='none'%3E%3Cpath d='M1 4.5L10 13.5L19 4.5' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+  }
+
+  &__item .empty {
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+
+  /* Style the accordion panel. Note: hidden by default */
+  &__item > .panel {
+    margin: 0 32px;
+    color: var(--main-black);
+    max-height: 0;
+
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  &__item > .accordion:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='18' viewBox='0 0 20 18' fill='none'%3E%3Cpath d='M1 4.5L10 13.5L19 4.5' stroke='%23C0B3A8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    color: var(--main-bronze);
+    float: right;
+    margin-left: 12px;
+  }
+
+  &__item > .active:after {
+    color: var(--main-white);
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='18' viewBox='0 0 20 18' fill='none'%3E%3Cpath d='M1 13.5L10 4.5L19 13.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  &__item > .active:hover:after {
+    color: var(--main-white);
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='18' viewBox='0 0 20 18' fill='none'%3E%3Cpath d='M1 13.5L10 4.5L19 13.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+}
+
+.filter2nd {
+  &__btn {
+    border: 0;
+    border-radius: 0;
+    color: var(--main-bronze);
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid rgba(204, 161, 107, 0.4);
+  }
+
+  &__panel {
+  }
+  &-top {
+    margin-top: 10px;
+  }
+}

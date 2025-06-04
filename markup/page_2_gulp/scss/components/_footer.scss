@@ -1,0 +1,203 @@
+.footer {
+  position: relative;
+  z-index: 30;
+  &__container {
+    background-color: var(--color-black);
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 55px;
+    @include mobile {
+      flex-direction: column;
+      padding: 0 24px;
+      align-items: center;
+    }
+  }
+  a {
+    color: var(--medium-gray);
+    font-family: var(--font-family);
+  }
+
+  .footer_info {
+    text-align: right;
+    @include mobile {
+      text-align: center;
+    }
+  }
+  p {
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--medium-gray);
+    display: block;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .phone,
+  .email {
+    color: var(--main-bronze);
+  }
+  .email {
+    font-size: 18px;
+  }
+  .rf {
+    display: block;
+    margin-top: -3px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: normal;
+  }
+  &__t {
+    min-height: 300px;
+    padding-top: 80px;
+    @include mobile {
+      padding-top: 60px;
+    }
+  }
+
+  &__b {
+    gap: 30px;
+    padding: 50px 55px 40px 55px;
+    @include mobile {
+      gap: 12px;
+      padding: 30px 24px 50px 24px;
+      text-align: center;
+    }
+    a {
+      font-size: 16px;
+      transition: 0.3s;
+      line-height: normal;
+      &:hover {
+        color: var(--main-bronze);
+      }
+    }
+    span {
+      color: var(--medium-gray);
+    }
+  }
+  a {
+    color: var(--medium-gray);
+    font-family: var(--font-family);
+  }
+}
+
+.footer_center {
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+  height: 345px;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mobile {
+    height: auto;
+  }
+}
+
+.f-logo {
+  width: 270px;
+  @include mobile {
+    width: 230px;
+    margin-bottom: 64px;
+  }
+}
+.footer_nav {
+  align-self: start;
+}
+
+/* Меню футера с раскрывающимися пунктами */
+.navf {
+  &__item {
+    margin-bottom: 30px;
+    text-align: left;
+    color: var(--medium-gray);
+  }
+
+  &__item .accordion {
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  &__item .accordion.active {
+    color: var(--main-bronze);
+  }
+
+  &__item .accordion:hover {
+    color: var(--main-bronze);
+  }
+
+  &__item .empty {
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+  a {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  a:hover {
+    color: var(--main-bronze);
+    transition: 0.3s;
+  }
+
+  /* Подменю футера. Hidden by default. */
+  &__item .panel {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  &__item .accordion:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1.375L7 7.375L13 1.375' stroke='%23B8B8B8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    float: right;
+    margin-left: 8px;
+    margin-top: -3px;
+    transition: 0.3s;
+  }
+  &__item .accordion:hover:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1.375L7 7.375L13 1.375' stroke='%23A3784E' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  &__item .accordion.active:after {
+    padding-top: 2px;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12' fill='none'%3E%3Cpath d='M1 8.625L7 2.625L13 8.625' stroke='%23A3784E' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  &__item .accordion.active:hover:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12' fill='none'%3E%3Cpath d='M1 8.625L7 2.625L13 8.625' stroke='%23A3784E' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+}
+
+.navf-sub {
+  margin-top: 10px;
+  &__item {
+    margin-bottom: 5px;
+    transition: 0.3s;
+    a {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__link {
+    color: var(--medium-gray);
+    transition: 0.3s;
+    @include hover {
+      color: var(--main-bronze);
+    }
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.youtube-link {
+  display: block;
+  margin: 140px auto 3px auto;
+  width: 111px;
+  height: auto;
+  @include mobile {
+    margin: 25px auto;
+  }
+}

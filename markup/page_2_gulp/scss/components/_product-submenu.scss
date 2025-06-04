@@ -1,0 +1,129 @@
+.submenu {
+  &__container {
+    margin-bottom: 64px;
+    overflow: hidden;
+  }
+  &__list {
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 42px;
+      z-index: 10;
+      position: absolute;
+      background: linear-gradient(to right, transparent, var(--main-beige));
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-start;
+      gap: 0;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 20px;
+      margin-bottom: -20px;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.subitem {
+  position: relative;
+  margin-right: 40px;
+  @include mobile {
+    max-width: calc(100vw - 48px);
+    margin-left: -4px;
+  }
+  &__flex {
+    align-items: center;
+  }
+  &__name {
+    display: block;
+    white-space: nowrap;
+    font-size: 22px;
+    margin: 0;
+    color: #838383;
+    text-transform: uppercase;
+  }
+  &__number {
+    display: none;
+    top: 0;
+    left: 28px;
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    font-family: "IntroDemoCondLightCAPS";
+    @include mobile {
+      left: 8px;
+      top: 10px;
+    }
+  }
+  &__note {
+    display: none;
+  }
+  &__back {
+    width: 20px;
+    margin-top: 48px;
+    display: none;
+    @include mobile {
+      margin-top: 94px;
+    }
+  }
+  &__forward {
+    width: 20px;
+    margin-top: 48px;
+    display: none;
+    @include mobile {
+      margin-top: 94px;
+    }
+  }
+}
+
+.subitem_active {
+  .subitem {
+    &__name {
+      color: var(--main-black);
+      font-size: 42px;
+      margin: 28px 24px 8px 24px;
+      @include mobile {
+        font-size: 42px;
+        margin: 28px 0 8px 12px;
+        max-width: 255px;
+        overflow: visible;
+      }
+    }
+
+    &__number {
+      position: absolute;
+      display: inline;
+    }
+
+    &__note {
+      color: var(--main-bronze);
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+      font-size: 14px;
+      display: block;
+      @include mobile {
+        margin: -18px 0 0 18px;
+      }
+    }
+
+    &__back {
+      display: inline-block;
+    }
+
+    &__forward {
+      display: inline-block;
+    }
+  }
+}

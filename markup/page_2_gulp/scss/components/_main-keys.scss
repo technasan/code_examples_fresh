@@ -1,0 +1,98 @@
+.keys {
+  background-color: var(--main-beige);
+  position: relative;
+  padding: 140px 55px;
+  z-index: 15;
+  @include mobile {
+    padding: 90px 24px 96px 24px;
+  }
+
+  &__cards {
+    color: var(--main-black);
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 32px 0;
+    @include mobile {
+      grid-template-columns: 100%;
+      gap: 24px 0;
+    }
+  }
+  &__item {
+    // max-width: 430px;
+    min-width: 250px;
+    background: url($rootpath + "img/line-card-vert.png") no-repeat right 32px;
+    background-clip: padding-box;
+    @include mobile {
+      background: url($rootpath + "img/line-card-vert.png") no-repeat left 24px;
+    }
+  }
+  &__item_noline {
+    background: none;
+    @include mobile {
+      background: url($rootpath + "img/line-card-vert.png") no-repeat left 24px;
+    }
+  }
+
+  &__top {
+    align-items: center;
+    @include mobile {
+      margin-bottom: 38px;
+    }
+  }
+  h1 {
+    text-align: center;
+    color: var(--dark-bronze);
+  }
+}
+.keys .container,
+.keys .container * {
+  z-index: 2;
+}
+
+.keys-card {
+  z-index: 15;
+  background: url($rootpath + "img/line-card.png") no-repeat;
+  margin: 0 32px;
+  height: 100%;
+  position: relative;
+  @include mobile {
+    margin: 0;
+    background-position-x: 24px;
+    padding: 24px 16px 0 16px;
+  }
+  &__icon {
+    margin-top: 54px;
+    width: 69px;
+    height: auto;
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+  &__link {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    margin-top: 24px;
+    vertical-align: middle;
+    @include mobile {
+      position: relative;
+    }
+  }
+  h2 {
+    margin: 28px 0 16px 0;
+    margin-right: 24px;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 18px;
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.h-auto {
+  height: auto;
+  width: 100%;
+}

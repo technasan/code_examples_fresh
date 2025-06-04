@@ -1,0 +1,266 @@
+input {
+	width: 100%;
+	height: 56px;
+	border-radius: 50px;
+	border: 1px solid var(--stroke-form);
+	color: var(--brand-black);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	outline: none;
+	padding: 16px 24px;
+}
+
+textarea {
+	width: 100%;
+	height: 128px;
+	border-radius: 24px;
+	border: 1px solid var(--stroke-form);
+	color: var(--brand-black);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	outline: none;
+	padding: 16px 24px;
+}
+
+input:focus-visible {
+	border: 1px solid var(--stroke-form);
+}
+
+input:focus::placeholder {
+	color: var(--electric-blue);
+}
+textarea:focus-visible {
+	border: 1px solid var(--stroke-form);
+}
+
+textarea:focus::placeholder {
+	color: var(--electric-blue);
+}
+
+::placeholder {
+	font-weight: 400;
+	color: var(--default-form);
+	opacity: 1;
+}
+
+::-ms-input-placeholder {
+	font-weight: 400;
+	color: var(--default-form);
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-top: 32px;
+}
+
+.form-soglasie {
+	color: #939393;
+	font-size: 10px;
+	line-height: 14px;
+	text-align: center;
+	margin: 8px 10px;
+}
+.form-soglasie a {
+	text-decoration: underline;
+	font-weight: 400;
+}
+
+.form-submit {
+	margin-top: 24px;
+	cursor: pointer;
+}
+
+.form-title {
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 39px;
+}
+
+.form-file-note {
+	font-size: small;
+}
+
+.error {
+	color: var(--red-err);
+	font-size: 14px;
+	margin-top: 5px;
+	display: none;
+}
+textarea {
+	resize: none;
+}
+
+.button-primary.form-vacancy {
+	margin-top: 4px !important;
+}
+
+.success {
+	color: green;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+select {
+	width: 100%;
+	height: 56px;
+	border-radius: 50px;
+	border: 1px solid var(--stroke-form);
+	color: var(--default-form);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	outline: none;
+	padding: 16px 24px;
+	background-color: white;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+	background-repeat: no-repeat;
+	background-position: right 16px center;
+	cursor: pointer;
+}
+
+select:focus-visible {
+	border: 1px solid var(--stroke-form);
+}
+
+select:focus {
+	color: var(--electric-blue);
+}
+
+/* Стилизация выпадающего списка */
+select option {
+	font-weight: 400;
+	color: var(--brand-black);
+	font-size: 16px;
+	padding: 12px;
+}
+
+select option:first-child {
+	color: var(--default-form);
+}
+
+/* Для Firefox */
+select {
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+}
+
+/* Стилизация выпадающего списка через кастомные свойства */
+select::-ms-expand {
+	display: none;
+}
+
+/* Применение кастомных стилей выпадающего списка с использованием современных возможностей браузеров */
+@supports ((-webkit-appearance: none) or (-moz-appearance: none)) {
+	select {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* Стилизация через datalist (поддерживается не во всех браузерах) */
+	datalist {
+		background-color: white;
+		border-radius: 24px;
+		border: 1px solid var(--stroke-form);
+		color: var(--brand-black);
+		font-size: 16px;
+		font-weight: 500;
+		padding: 16px;
+		max-height: 200px;
+		overflow-y: auto;
+	}
+}
+
+/* Стили для кастомного селекта */
+.custom-select-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.custom-select-header {
+	width: 100%;
+	height: 56px;
+	border-radius: 50px;
+	border: 1px solid var(--stroke-form);
+	color: var(--brand-black);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	outline: none;
+	padding: 16px 24px;
+	background-color: white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.custom-select-header::after {
+	content: '';
+	display: block;
+	width: 12px;
+	height: 12px;
+	border-right: 2px solid var(--default-form);
+	border-bottom: 2px solid var(--default-form);
+	transform: rotate(45deg);
+	margin-top: -6px;
+}
+
+.custom-select-options {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-height: 0;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 24px;
+	border: 1px solid var(--stroke-form);
+	margin-top: 8px;
+	z-index: 10;
+	transition: max-height 0.3s ease;
+	opacity: 0;
+}
+
+.custom-select-options.open {
+	max-height: 300px;
+	opacity: 1;
+	overflow-y: auto;
+}
+
+.custom-select-option {
+	padding: 6px 16px;
+	cursor: pointer;
+	color: var(--brand-black);
+	font-size: 16px;
+	font-weight: 400;
+	transition: background-color 0.2s;
+	margin: 5px 10px;
+}
+
+.custom-select-option:hover {
+	background-color: #e9f4ff;
+	border-radius: 10px;
+}
+
+.custom-select-option.selected {
+	font-weight: 500;
+}
+
+/* Первая опция как placeholder */
+.custom-select-header.placeholder {
+	color: var(--default-form);
+}
+
+.custom-select-header.open::after {
+	transform: rotate(-135deg);
+	margin-top: 3px;
+}

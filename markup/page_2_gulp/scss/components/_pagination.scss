@@ -1,0 +1,26 @@
+.pagination-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  padding-bottom: 200px;
+}
+
+.pagination {
+  position: sticky;
+  top: var(--sticky-offset);
+  &__bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--coffee-milk);
+    cursor: pointer;
+    margin-bottom: 12px;
+    @include mobile {
+      margin-bottom: 16px;
+    }
+    &.current {
+      background: var(--main-bronze);
+    }
+  }
+}

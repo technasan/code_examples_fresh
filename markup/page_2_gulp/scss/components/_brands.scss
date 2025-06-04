@@ -1,0 +1,628 @@
+// .brands-sk-sel .back
+.back {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 5;
+}
+
+.brands {
+  &__container {
+    padding-top: 238px;
+    margin: 0 55px 160px 55px;
+    grid-template-columns: 308px calc(100% - 472px);
+    gap: 0 145px;
+    min-width: 1000px;
+
+    @include mobile {
+      padding-top: 100px;
+      margin: 90px 24px 0 24px;
+      grid-template-columns: 100%;
+      gap: 48px;
+      min-width: 300px;
+    }
+  }
+
+  &__left {
+    @include mobile {
+      overflow: hidden;
+    }
+  }
+}
+
+.brands-nav {
+  justify-content: space-between;
+  text-transform: uppercase;
+  @include mobile {
+    max-width: calc(100vw - 48px);
+  }
+}
+
+.brands-content {
+  .arr-left-on,
+  .arr-right-on{
+    width: auto;
+    position: static;
+    margin-top: 0;
+    gap: 12px;
+    &::after{
+      display: none;
+    }
+    svg{
+      width: auto;
+      height: auto;
+    }
+    span{
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.14px;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: #886A44;
+      transition: .20s ease-out;
+    }
+  }
+  .swiper-slide{
+    padding: 0;
+    border: none;
+    min-height: 592px;
+    &.swiper-slide-active{
+      .brands-info{
+        &__pic{
+          opacity: 1;
+          img{
+            margin-left: 50px;
+          }
+          &_sk img{
+            margin-left: 10px;
+          }
+          &_horeca img{
+            margin-left: -15px;
+          }
+        }
+      }
+    }
+  }
+  &__info {
+    width: 100%;
+    margin-top: 10px;
+    &_horeca {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.brands-info {
+  position: relative;
+  max-width: fit-content;
+  @include mobile {
+    margin-top: 30px;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--color-black);
+    width: 592px;
+    height: 592px;
+    z-index: 0;
+    @include mobile {
+      width: 327px;
+      height: 327px;
+    }
+  }
+  &__content * {
+    overflow: visible;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    gap: 28px;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__text {
+    z-index: 20;
+    width: 268px;
+    margin-top: 147px;
+    margin-left: 114px;
+    color: var(--main-white);
+    @include mobile {
+      margin-top: 53px;
+      margin-left: 60px;
+    }
+    h1 {
+      color: var(--main-bronze);
+      margin: 0;
+      @include mobile {
+        font-size: 22px;
+        line-height: 28px;
+      }
+    }
+    p {
+      color: var(--medium-gray);
+      font-size: 18px;
+      line-height: normal;
+      padding-bottom: 32px;
+      @include mobile {
+        padding-bottom: 0;
+        max-width: 183px;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+
+    &_sk button {
+      position: relative;
+      z-index: 30;
+    }
+
+    &_horeca p {
+      @include mobile {
+        padding-bottom: 0;
+        max-width: 223px;
+      }
+    }
+
+    &_kids p {
+      @include mobile {
+        padding-bottom: 0;
+        max-width: 223px;
+      }
+    }
+
+    button {
+      width: auto;
+      padding: 0 56px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      margin-top: 4px;
+      @include mobile {
+        max-width: 198px;
+        margin-top: 8px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  }
+  &__pic {
+    opacity: 0;
+    transition: opacity .20s ease-out;
+    width: 372px;
+    margin-top: 147px;
+    @include mobile {
+      margin-top: -20px;
+      margin-left: 190px;
+    }
+    img {
+      z-index: 5;
+      width: 322px;
+      // margin-left: 50px;
+      filter: drop-shadow(-20px 0 45px rgba(242, 243, 246, 0.17));
+      transition: margin-left .20s ease-out;
+      @include mobile {
+        width: 134px;
+        filter: drop-shadow(-15px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+
+    // модификаторы для разных брендов
+
+    &_sk img {
+      position: relative;
+      width: 269px;
+      margin-top: -120px;
+      // margin-left: 65px;
+      filter: drop-shadow(-20px 0 60px rgba(242, 243, 246, 0.15));
+      @include mobile {
+        width: 118px;
+        margin-top: -110px;
+        margin-left: 10px;
+        filter: drop-shadow(-5px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+    &_horeca img {
+      width: 387px;
+      margin-top: 50px;
+      filter: drop-shadow(0 0 60px rgba(242, 243, 246, 0.25));
+      @include mobile {
+        width: 171px;
+        margin-top: 4px;
+        margin-left: -15px;
+        filter: drop-shadow(-5px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+
+    &_kids img {
+      width: 387px;
+      margin-top: 50px;
+      filter: drop-shadow(-5px -5px 70px rgba(242, 243, 246, 0.25));
+
+      @include mobile {
+        width: 171px;
+        margin-top: -50px;
+        filter: drop-shadow(-15px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+  }
+}
+
+.brands-details {
+  margin: 0 55px 160px 55px;
+  @include mobile {
+    margin: 60px 24px 104px 24px;
+  }
+  &__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      grid-row-start: auto;
+    }
+  }
+
+  &__view360 {
+    @include mobile {
+      order: 2;
+    }
+  }
+  &__menu_sk {
+    @include mobile {
+      order: 1;
+    }
+    .prodmenu {
+      width: 100%;
+      max-width: 700px;
+    }
+  }
+
+  // блок с внутренним скроллом
+  &__menu_sk {
+    height: 567px;
+    @include mobile {
+      // !!! здесь должно разворачиваться в список-аккордеон!
+      height: 458px;
+    }
+    overflow: auto;
+    padding-right: 1px;
+  }
+
+  &__menu_sk::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--light-gray);
+  }
+
+  &__menu_sk::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--main-bronze);
+  }
+
+  &__menu_sk::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: var(--light-gray);
+  }
+}
+
+.sk-img-header {
+  min-width: 308px;
+  max-width: 308px;
+  height: 85px;
+  @include mobile {
+    width: 199px;
+    height: 55px;
+  }
+}
+
+.smth {
+  margin: 300px 55px 160px 55px;
+  height: 200px;
+  text-align: center;
+  justify-content: space-between;
+  div {
+    width: 195px;
+    height: 195px;
+    padding-top: 90px;
+    background-color: var(--medium-gray);
+  }
+}
+// .brands-sk-sel .back
+/*
+.back {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 5;
+}
+
+.brands {
+  &__container {
+    padding-top: 238px;
+    margin: 0 55px 160px 55px;
+    grid-template-columns: 308px calc(100% - 472px);
+    gap: 0 145px;
+    min-width: 1000px;
+
+    @include mobile {
+      padding-top: 100px;
+      margin: 90px 24px 0 24px;
+      grid-template-columns: 100%;
+      gap: 48px;
+      min-width: 300px;
+    }
+  }
+
+  &__left {
+    @include mobile {
+      overflow: hidden;
+    }
+  }
+}
+
+.brands-nav {
+  justify-content: space-between;
+  text-transform: uppercase;
+  @include mobile {
+    max-width: calc(100vw - 48px);
+  }
+  span {
+    gap: 15px;
+    align-items: center;
+    @include mobile {
+      align-items: flex-start;
+    }
+  }
+  span a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+    letter-spacing: 0.14px;
+  }
+}
+
+.brands-content {
+  &__info {
+    margin-top: 10px;
+    &_horeca {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.brands-info {
+  position: relative;
+  max-width: fit-content;
+  @include mobile {
+    margin-top: 30px;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--color-black);
+    width: 592px;
+    height: 592px;
+    z-index: 0;
+    @include mobile {
+      width: 327px;
+      height: 327px;
+    }
+  }
+  &__content * {
+    overflow: visible;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    gap: 28px;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__text {
+    z-index: 20;
+    width: 268px;
+    margin-top: 147px;
+    margin-left: 114px;
+    color: var(--main-white);
+    @include mobile {
+      margin-top: 53px;
+      margin-left: 60px;
+    }
+    h1 {
+      color: var(--main-bronze);
+      margin: 0;
+      @include mobile {
+        font-size: 22px;
+        line-height: 28px;
+      }
+    }
+    p {
+      color: var(--medium-gray);
+      font-size: 18px;
+      line-height: normal;
+      padding-bottom: 32px;
+      @include mobile {
+        padding-bottom: 0;
+        max-width: 183px;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+
+    &_sk button {
+      position: relative;
+      z-index: 30;
+    }
+
+    &_horeca p {
+      @include mobile {
+        padding-bottom: 0;
+        max-width: 223px;
+      }
+    }
+
+    &_kids p {
+      @include mobile {
+        padding-bottom: 0;
+        max-width: 223px;
+      }
+    }
+
+    button {
+      width: 100%;
+      max-width: 268px;
+      text-transform: uppercase;
+      margin-top: 16px;
+      @include mobile {
+        max-width: 198px;
+        margin-top: 8px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  }
+  &__pic {
+    margin-top: 147px;
+    @include mobile {
+      margin-top: -20px;
+      margin-left: 190px;
+    }
+    img {
+      z-index: 5;
+      width: 322px;
+      margin-left: 50px;
+      filter: drop-shadow(-20px 0 45px rgba(242, 243, 246, 0.17));
+      @include mobile {
+        width: 134px;
+        filter: drop-shadow(-15px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+
+    // модификаторы для разных брендов
+
+    &_sk img {
+      position: relative;
+      width: 269px;
+      margin-top: -120px;
+      margin-left: 65px;
+      filter: drop-shadow(-20px 0 60px rgba(242, 243, 246, 0.15));
+      @include mobile {
+        width: 118px;
+        margin-top: -110px;
+        margin-left: 10px;
+        filter: drop-shadow(-5px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+    &_horeca img {
+      width: 387px;
+      margin-top: 50px;
+      filter: drop-shadow(0 0 60px rgba(242, 243, 246, 0.25));
+      @include mobile {
+        width: 171px;
+        margin-top: 4px;
+        margin-left: -15px;
+        filter: drop-shadow(-5px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+
+    &_kids img {
+      width: 387px;
+      margin-top: 50px;
+      filter: drop-shadow(-5px -5px 70px rgba(242, 243, 246, 0.25));
+
+      @include mobile {
+        width: 171px;
+        margin-top: -50px;
+        filter: drop-shadow(-15px -10px 35px rgba(242, 243, 246, 0.25));
+      }
+    }
+  }
+}
+
+.brands-details {
+  margin: 0 55px 160px 55px;
+  @include mobile {
+    margin: 60px 24px 104px 24px;
+  }
+  &__container {
+    max-width: fit-content;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      grid-row-start: auto;
+    }
+  }
+
+  &__view360 {
+    @include mobile {
+      order: 2;
+    }
+  }
+  &__menu_sk {
+    @include mobile {
+      order: 1;
+    }
+    .prodmenu {
+      width: 100%;
+      max-width: 700px;
+    }
+  }
+
+  // блок с внутренним скроллом
+  &__menu_sk {
+    height: 561px;
+    @include mobile {
+      height: max-content;
+      max-height: 468px;
+    }
+    overflow: auto;
+  }
+
+  &__menu_sk::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--light-gray);
+  }
+
+  &__menu_sk::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--medium-gray);
+  }
+
+  &__menu_sk::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: var(--light-gray);
+  }
+}
+
+.sk-img-header {
+  width: 308px;
+  height: 85px;
+  @include mobile {
+    width: 199px;
+    height: 55px;
+  }
+}
+
+.smth {
+  margin: 300px 55px 160px 55px;
+  height: 200px;
+  text-align: center;
+  justify-content: space-between;
+  div {
+    width: 195px;
+    height: 195px;
+    padding-top: 90px;
+    background-color: var(--medium-gray);
+  }
+}
+
+*/

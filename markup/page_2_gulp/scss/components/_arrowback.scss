@@ -1,0 +1,67 @@
+.icon-back * svg,
+.icon-back-white * svg {
+  width: 92px;
+  height: 69px;
+
+  @include mobile {
+    width: 59px;
+    height: 45px;
+  }
+}
+
+section.back {
+  padding: 56px 55px 10px 55px;
+  @include mobile {
+    padding: 52px 24px 10px 24px;
+  }
+}
+
+// bg: black, arrow:white
+section.back-black {
+  background-color: var(--color-black);
+  padding: 56px 55px 10px 55px;
+  @include mobile {
+    padding: 32px 24px 10px 24px;
+  }
+}
+
+.icon-back-white svg.icon path.arr {
+  //stroke: #fff;
+}
+
+.icon-back-white svg.icon .cir {
+  //stroke: #c0b3a8;
+}
+
+.icon-back svg.icon path {
+  transition: 0.2s;
+}
+
+.icon-back:hover svg.icon path {
+  transition: 0.3s;
+}
+
+.icon-back:hover svg.icon .cir {
+  stroke: #886a44;
+}
+
+.icon-back svg path.arr,
+.icon-back-white svg path.arr {
+  transition: 0.2s transform;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.icon-back:hover svg path.arr {
+  transition: 0.3s;
+  stroke: #886a44;
+  transform: translate(-7px, 0);
+}
+.icon-back-white:hover svg path.arr {
+  transition: 0.3s;
+  stroke: #886a44;
+  transform: translate(-7px, 0);
+}
+.icon-back-white:hover svg .cir {
+  stroke: #886a44;
+}
